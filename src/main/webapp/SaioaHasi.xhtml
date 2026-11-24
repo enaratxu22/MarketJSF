@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core">
+<f:view>
+	<h:head>
+		<title>SAIOA HASI</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<h3>SAIOA HAS EZAZU:</h3>
+			<br/><br/>
+			<table>
+				<tr>
+					<td>Email-a:</td>
+					<td><h:inputText id="emaila" value = "#{SaioaHasi.emaila}" required="true"></h:inputText></td>
+				</tr>
+				<tr>
+					<td>Pasahitza:</td>
+					<td><h:inputSecret id="pasahitza" value = "#{SaioaHasi.pasahitza}" required="true">
+					</h:inputSecret></td>
+				</tr>
+			</table>
+			<p><h:commandButton value="Saioa Hasi" action= "#{SaioaHasi.egiaztatu}" required="true"></h:commandButton></p>
+		</h:form>
+		<br/>
+		<h:outputLink value = "HasieraOrria.xhtml">Itzuli</h:outputLink>
+	</h:body>
+</f:view>
+</html>

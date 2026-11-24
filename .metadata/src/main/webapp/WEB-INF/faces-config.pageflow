@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf17950907424320" configfile="/MarketJSF/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="Erregistratu.xhtml" x="122" y="178" id="pf17950908083071" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf17950908083092 pf179509090041910" path="/Erregistratu.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Menua.xhtml" x="338" y="562" id="pf17950908083104" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf17950908083092 pf17950908083105" path="/Menua.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="SaioaHasi.xhtml" x="122" y="562" id="pf17950908083107" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf17950908083105 pf17950908083108" path="/SaioaHasi.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="SaiatuBerriro.xhtml" id="pf17950908083109" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" inlinks="pf17950908083108 pf179509090041910" path="/SaiatuBerriro.xhtml"/>
+  <links id="pf17950908083092" target="pf17950908083104" source="pf17950908083071" outcome="ok" redirect="true"/>
+  <links id="pf17950908083105" target="pf17950908083104" source="pf17950908083107" outcome="ok"/>
+  <links id="pf17950908083108" target="pf17950908083109" source="pf17950908083107" outcome="error"/>
+  <links id="pf179509090041910" target="pf17950908083109" source="pf17950908083071" outcome="error"/>
+</pageflow:Pageflow>

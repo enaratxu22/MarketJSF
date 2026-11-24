@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core">
+<f:view>
+	<h:head>
+		<title>ERREGISTRATU</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<h3>ERREGISTRATU ZAITEZ</h3>
+			<h:messages globalOnly="true" style="color:red" />
+			<br/><br/>
+			<table>
+				<tr>
+					<td>Izena:</td>
+					<td><h:inputText id="izena" value = "#{Erregistratu.izena}" required="true"></h:inputText></td>
+				</tr>
+				<tr>
+					<td>Email-a:</td>
+					<td><h:inputText id="emaila" value = "#{Erregistratu.emaila}" required="true"></h:inputText></td>
+				</tr>
+				<tr>
+					<td>Pasahitza:</td>
+					<td><h:inputSecret id="pasahitza" value = "#{Erregistratu.pasahitza}" required="true">
+							<f:validateLength minimum="8" maximum="12"/>
+							<f:validateRegex pattern="^(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,12}$" />
+					</h:inputSecret></td>
+					<td><h:message for="pasahitza" style="color:red" /></td>
+				</tr>
+				<tr>
+					<td>Errepikatu pasahitza:</td>
+					<td><h:inputSecret id="pasahitza2" value = "#{Erregistratu.pasahitza2}"></h:inputSecret></td>
+				</tr>
+			</table>
+			<p><h:commandButton value="Erregistratu" action= "#{Erregistratu.egiaztatu}" required="true"></h:commandButton></p>
+		</h:form>
+		<br/>
+		<h:outputLink value = "HasieraOrria.xhtml">Itzuli</h:outputLink>
+	</h:body>
+</f:view>
+</html>

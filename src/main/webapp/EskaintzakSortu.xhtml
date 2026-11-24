@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="jakarta.faces.html"
+	xmlns:f="jakarta.faces.core" xmlns:p="primefaces">
+<f:view>
+	<h:head>
+		<title>ESKAINTZA SORTU</title>
+	</h:head>
+	<h:body>
+		<h:form>
+			<h3>ESKAINTZA SORTU:</h3>
+			<h:messages id="mezuak" style="color:red" />
+			<br />
+			<br />
+			<table>
+				<tr>
+					<td>Tituloa:</td>
+					<td><h:inputText id="tituloa"
+							value="#{EskaintzaSortu.tituloa}" required="true"></h:inputText></td>
+				</tr>
+				<tr>
+					<td>Data:</td>
+					<td><p:datePicker id="data" value="#{EskaintzaSortu.data}"
+							navigator="false" inline="true">
+							<p:ajax event="dateSelect" listener="#{EskaintzaSortu.onDateSelect}" update="mezuak"></p:ajax>
+						</p:datePicker></td>
+				</tr>
+				<tr>
+					<td>Deskripzioa:</td>
+					<td><h:inputTextarea id="deskripzioa"
+							value="#{EskaintzaSortu.deskripzioa}" rows="4" cols="25" /></td>
+				</tr>
+				<tr>
+					<td>Prezioa(€):</td>
+					<td>
+						<h:inputText id="prezioa" value="#{EskaintzaSortu.prezioa}">
+							<f:validateDoubleRange minimum="0.01" /> 
+						</h:inputText> 
+						<h:commandButton value="Argazkia igo" action="#{EsakintzaSortu.igoArgazkia}" immediate="true" />
+						<h:message for="prezioa" style="color:red" />
+					</td>
+				</tr>
+				<tr>
+					<td>Egoera:</td>
+					<td><h:selectOneMenu value="#{EskaintzaSortu.mota}">
+							<f:selectItems value="#{EskaintzaSortu.motak}" />
+						</h:selectOneMenu></td>
+				</tr>
+			</table>
+			<p>
+				<h:commandButton value="Sortu Eskaintza"
+					action="#{EskaintzaSortu.createSale}" required="true"></h:commandButton>
+			</p>
+			<p>
+				<h:commandButton value="Itxi" action="Menua.xhtml" required="true"></h:commandButton>
+			</p>
+		</h:form>
+		<br />
+		<h:outputLink value="HasieraOrria.xhtml">Itzuli</h:outputLink>
+	</h:body>
+</f:view>
+</html>
